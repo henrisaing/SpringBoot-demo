@@ -18,4 +18,14 @@ public class GreetingController {
     public String index(){
         return "greeting";
     }
+
+    @GetMapping("/static")
+    public String staticTest(){
+        return "redirect:statictest.html";
+    }
+
+    @GetMapping("/link")
+    public String link(){
+        return "redirect:linkpage.html";
+    }
 }
