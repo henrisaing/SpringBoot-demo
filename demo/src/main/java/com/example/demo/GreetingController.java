@@ -5,9 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+
+
 @Controller
 public class GreetingController {
-
 	@GetMapping("/greeting")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
@@ -28,4 +30,12 @@ public class GreetingController {
     public String link(){
         return "redirect:linkpage.html";
     }
+
+    @GetMapping("/words")
+    public String words(Model model){
+        model.addAttribute("words", words);
+        return "words";
+    }
+
+    String[] words = {"these", "are", "the", "words"}; 
 }
