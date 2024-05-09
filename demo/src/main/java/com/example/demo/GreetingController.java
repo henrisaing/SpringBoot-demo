@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,5 +39,18 @@ public class GreetingController {
         return "words";
     }
 
+    @GetMapping("/article")
+    public String article(Model model){
+        model.addAttribute("arti", first);
+        return "article";
+    }
+
     String[] words = {"these", "are", "the", "words"}; 
+    // ArrayList<Article> articles = new ArrayList<>();
+    Article first;
+    
+    public GreetingController(){
+        first = new Article("First Article", "Welcome to artipedia. This is our first article. We hope you enjoy your stay.");
+        first.addSub("This is a subarticle", "Information for the first subarticle");
+    }
 }
