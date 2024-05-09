@@ -53,5 +53,6 @@ public class GreetingController {
         first = new Article("First Article", "Welcome to artipedia. This is our first article. We hope you enjoy your stay.", "https://i.ibb.co/sbwdY5s/guild-wars-guild-wars-2-creepy-necromancer-wallpaper-preview.jpg");
         first.addSub("This is a subarticle", "Information for the first subarticle");
         first.addSub("Attack Patterns", "Freya has a mix of healing, minion support, and AoE attacks.");
+        first.addSub("Loot", "This boss drops the following loot.\n  -Ball\n  -Sword");
     }
 }

@@ -10,7 +10,7 @@
     <img th:src="${arti.img}" />
     <div th:each="subs : ${arti.subs}">
         <h3 th:text="${subs.key}" />
-        <p th:text="${subs.value}" />
+        <p th:text="${subs.value}" style="white-space: pre-line"/>
     </div>
 </body>
 </html>
