@@ -7,6 +7,7 @@
 <body>
     <h2 th:text="${arti.name}" />
     <p th:text="${arti.info}" />
+    <img th:src="${arti.img}" />
     <div th:each="subs : ${arti.subs}">
         <h3 th:text="${subs.key}" />
         <p th:text="${subs.value}" />

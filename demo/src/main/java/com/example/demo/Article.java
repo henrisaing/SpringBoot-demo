@@ -6,16 +6,25 @@ import java.util.Map;
 public class Article {
     private String name;
     private String article;
+    private String image;
     private Map<String, String> subArticle = new HashMap<>();
     
     public Article(String articleName){
         name = articleName;
         article = "";
+        image = "";
     }
 
     public Article(String articleName, String info){
         name = articleName;
         article = info;
+        image = "";
+    }
+
+    public Article(String articleName, String info, String url){
+        name = articleName;
+        article = info;
+        image = url;
     }
 
     public void addSub(String subName, String subinfo){
@@ -28,6 +37,10 @@ public class Article {
 
     public String info(){
         return article;
+    }
+
+    public String img(){
+        return image;
     }
 
     public Map<String, String> subs(){
