@@ -54,5 +54,9 @@ public class GreetingController {
         first.addSub("This is a subarticle", "Information for the first subarticle");
         first.addSub("Attack Patterns", "Freya has a mix of healing, minion support, and AoE attacks.");
         first.addSub("Loot", "This boss drops the following loot.\n  -Ball\n  -Sword");
+        first.addSub("Lotta Text", "This subarticle is just word vomit. I'm just testing the limits to java strings. How long can they go?");
+        first.addSub("Zoo", "Is this reverse alphabetical?");
+        first.addSub("Loot2", "This boss drops the following loot.\n  -Ball\n  -Sword");
+        
     }
 }

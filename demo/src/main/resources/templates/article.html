@@ -3,14 +3,53 @@
 <head> 
     <title>Getting Started: Serving Web Content</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body, html{
+            height:100%;
+            background-color: black;
+        }
+        #main{
+            /* z-index: -2; */
+        }
+        #blur{
+            width:100%;
+            height:100%;
+            /* position: absolute; */
+            /* top:0; */
+            /* left:0; */
+            /* backdrop-filter: blur(5px); */
+            /* background: linear-gradient(90deg, blur(5px), blur(5px), blur(0px)); */
+            background: linear-gradient(90deg, rgba(0,0,0,1), rgba(0,0,0,1), rgba(255,255,255,0));
+            z-index: 1;
+        }
+        #main{
+            height:100%;
+            /* object-fit: cover; */
+            /* z-index: -1; */
+            color: white;
+            background-color: white;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-    <h2 th:text="${arti.name}" />
-    <p th:text="${arti.info}" />
-    <img th:src="${arti.img}" />
-    <div th:each="subs : ${arti.subs}">
-        <h3 th:text="${subs.key}" />
-        <p th:text="${subs.value}" style="white-space: pre-line"/>
+    <div id="main" th:style="'background-image:url('+@{${arti.img}}+');'">
+        
+        <!-- <img class="background-image" th:src="${arti.img}" /> -->
+        <div id="blur">
+            <h2 th:text="${arti.name}" />
+            <p th:text="${arti.info}" />
+            <div th:each="subs : ${arti.subs}">
+                <h3 th:text="${subs.key}" />
+                <p th:text="${subs.value}" style="white-space: pre-line"/>
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
