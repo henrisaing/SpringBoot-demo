@@ -7,6 +7,8 @@ public class Article {
     private String name;
     private String article;
     private String image;
+    private boolean pub;
+    private String type;
     private Map<String, String> subArticle = new HashMap<>();
     
     public Article(String articleName){
